@@ -38,8 +38,8 @@ SELECT
       ON ( rmi.id = i.id AND rmi.record_type_code = 'i')
 
   WHERE
-    h.status in ('b','i')    
-    AND i.item_status_code = '!'
+    h.status in ('b','i','0')    
+    AND i.item_status_code in ('!','#')
     AND h.pickup_location_code Is not null
     AND NOW() - rmi.record_last_updated_gmt > interval '3' hour
 	
